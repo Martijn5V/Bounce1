@@ -1,8 +1,4 @@
-var x = 50;
-var y = 50;
-speedX = 2;
-speedY = 2;
-
+bal = new Bal (50, 100);
 
 
 /**
@@ -30,17 +26,5 @@ function draw() {
  background('blue');
   fill(100, 100, 255);
 
-  // teken een cirkel
-  ellipse(x,y,80,80);
-
-
-  x = x + speedX;
-  y = y + speedY;
-
-  if (x === 0 || 1280){
-    speedX = speedX * -1
-  }
-  f (x === 0 || 720){
-    speedY = speedY * -1
-  }
+  bal
 }
