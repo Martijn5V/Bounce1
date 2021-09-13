@@ -1,6 +1,6 @@
-bal = new Bal (50, 100);
+// globale variabelen
 
-
+var ballen = [];
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -8,9 +8,18 @@ bal = new Bal (50, 100);
  */
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
- createCanvas(1280, 720);
-
+  createCanvas(1280, 720);
   
+  for (var i = 0; i < 100; i++) {
+    var randomX= random(50,1230);
+    var randomY= random (50, 670);
+    var randomSpeedX= random (-5, 5);
+    var randomSpeedY= random (-5, 5);
+  
+    var bal = new Bal(randomX, randomY, randomSpeedX, randomSpeedY);
+
+    ballen.push(bal);
+  }
 }
 
 
@@ -20,11 +29,11 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
-  // stel vulkleur in
- 
- // Kleur de achtergrond blauw, zodat je het kunt zien
- background('blue');
-  fill(100, 100, 255);
+  // Kleur de achtergrond blauw, zodat je het kunt zien
+  background('blue');
 
-  bal
+  for(var i = 0; i < ballen.length; i++){
+    ballen[i].show();
+    ballen[i].update();
+  }
 }
