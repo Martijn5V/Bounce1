@@ -10,7 +10,7 @@ function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
   
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 25; i++) {
     var randomX= random(50,1230);
     var randomY= random (50, 670);
     var randomSpeedX= random (-5, 5);
@@ -20,6 +20,8 @@ function setup() {
 
     ballen.push(bal);
   }
+  var superbal = new Superbal (600, 100, 10, 10);
+  ballen.push(superbal);
 }
 
 
